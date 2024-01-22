@@ -63,10 +63,16 @@ endif()
 # Google Abseil
 add_subdirectory(deps/abseil-20230802.1 build-abseil)
 
+
+
 # UTF8-CPP source code
 file(GLOB_RECURSE SOURCES_UTF8CPP CONFIGURE_DEPENDS
     ${CMAKE_CURRENT_SOURCE_DIR}/deps/utfcpp-4.0.4/source/*.h
 )
+
+
+# nvm nava::core interface
+add_subdirectory(deps/nvm-nava-core-plugins build-nava-core-plugins)
 
 # nvm nava::core
 add_subdirectory(deps/nvm-nava-core build-nava-core)

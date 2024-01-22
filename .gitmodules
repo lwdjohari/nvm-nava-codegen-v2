@@ -8,3 +8,6 @@
 [submodule "deps/nvm-nava-core"]
 	path = deps/nvm-nava-core
 	url = git@github.com-lwdjohari:lwdjohari/nvm-nava-core.git
+[submodule "deps/nvm-nava-core-plugins"]
+	path = deps/nvm-nava-core-plugins
+	url = git@github.com-lwdjohari:lwdjohari/nvm-nava-core-plugins.git
