@@ -77,6 +77,9 @@ add_subdirectory(deps/nvm-nava-core-plugins build-nava-core-plugins)
 # nvm nava::core
 add_subdirectory(deps/nvm-nava-core build-nava-core)
 
+# nvm nava::core::interpreters
+add_subdirectory(deps/nvm-nava-core-interpreter build-nava-core-interpreter)
+
 # nvm nava::rplugin::pqsql
 add_subdirectory(deps/nvm-nava-repoplugin-pqsql build-nava-repoplugin-pqsql)
 
