@@ -42,7 +42,7 @@ if(LIB_NAVA2_BUILD_DOC)
         message("Doxygen build started")
 
          # note the option ALL which allows to build the docs together with the application
-        add_custom_target( doc_nativemq ALL
+        add_custom_target( doc_nava2 ALL
             COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_OUT}
             WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/generated/docs-cached/
             COMMENT "Generating API documentation with Doxygen"
@@ -67,6 +67,12 @@ add_subdirectory(deps/abseil-20230802.1 build-abseil)
 file(GLOB_RECURSE SOURCES_UTF8CPP CONFIGURE_DEPENDS
     ${CMAKE_CURRENT_SOURCE_DIR}/deps/utfcpp-4.0.4/source/*.h
 )
+
+# nvm nava::core
+add_subdirectory(deps/nvm-nava-core build-nava-core)
+
+# nvm nava::rplugin::pqsql
+add_subdirectory(deps/nvm-nava-repoplugin-pqsql build-nava-repoplugin-pqsql)
 
 # Main headers and sources
 file(GLOB_RECURSE SOURCES_NAVA2 CONFIGURE_DEPENDS
