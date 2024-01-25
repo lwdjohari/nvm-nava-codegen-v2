@@ -14,3 +14,6 @@
 [submodule "deps/nvm-nava-core-interpreter"]
 	path = deps/nvm-nava-core-interpreter
 	url = git@github.com-lwdjohari:lwdjohari/nvm-nava-core-interpreter.git
+[submodule "deps/nvm-core"]
+	path = deps/nvm-core
+	url = git@github.com-lwdjohari:lwdjohari/nvm-core.git

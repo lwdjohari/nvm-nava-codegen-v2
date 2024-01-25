@@ -70,6 +70,16 @@ file(GLOB_RECURSE SOURCES_UTF8CPP CONFIGURE_DEPENDS
     ${CMAKE_CURRENT_SOURCE_DIR}/deps/utfcpp-4.0.4/source/*.h
 )
 
+add_library(utf8cpp ${SOURCES_UTF8CPP})
+set_target_properties(utf8cpp PROPERTIES LINKER_LANGUAGE CXX)
+target_compile_features(utf8cpp PUBLIC cxx_std_17)
+target_include_directories(utf8cpp
+    PUBLIC
+        deps/utfcpp-4.0.4/source/
+)
+
+# nvm nvm::core
+add_subdirectory(deps/nvm-core build-nvm-core)
 
 # nvm nava::core interface
 add_subdirectory(deps/nvm-nava-core-plugins build-nava-core-plugins)
@@ -90,8 +100,9 @@ file(GLOB_RECURSE SOURCES_NAVA2 CONFIGURE_DEPENDS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/*.s
 )
 
-add_library(${PROJECT_NAME} ${SOURCES_UTF8CPP} ${SOURCES_NAVA2} )
+add_library(${PROJECT_NAME}  ${SOURCES_NAVA2} )
 target_link_libraries(${PROJECT_NAME} 
+    utf8cpp
     absl::base 
     absl::flat_hash_map 
     absl::algorithm
@@ -106,7 +117,6 @@ target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
 target_include_directories(${PROJECT_NAME}
     PUBLIC
         inc/
-        deps/utfcpp-4.0.4/source/
 )
 
 
